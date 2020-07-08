@@ -1,25 +1,28 @@
-import React from 'react';
+import React, {useState} from 'react';
 import logo from './logo.svg';
 import './App.css';
 
 function App() {
+
+  //Initialization of Hooks
+  const[count, setCount] = useState(0);
+  const[buttonName, setButton] = useState("No button Pressed Yet");
+
   return (
     <div className="App">
-      <header className="App-header">
-        <img src={logo} className="App-logo" alt="logo" />
-        <p>
-          Edit <code>src/App.js</code> and save to reload.
-        </p>
-        <a
-          className="App-link"
-          href="https://reactjs.org"
-          target="_blank"
-          rel="noopener noreferrer"
-        >
-          Learn React
-        </a>
-      </header>
+      <h1>Hey there this is me</h1>
+      <p>Here is some shit to click</p>
+      <button onClick={() => setCount(count+1)}>Click Here!</button>
+      <p>Button has been clicked {count} times</p>
+      <br></br>
+      <div className="ButtonField">
+        <h1>Ok this is the button field</h1>
+        <button onClick={()=> setButton("Button1")}>Button 1</button>
+        <p>{buttonName} has been pressed</p>
+      </div>
     </div>
+
+    
   );
 }
 
